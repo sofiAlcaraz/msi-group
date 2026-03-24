@@ -7,6 +7,7 @@ class ReservaController
 
     private function fechaValida($fecha_inicio_reserva, $fecha_hoy)
     {
+        var_dump($fecha_inicio_reserva, $fecha_hoy);
         if ($fecha_inicio_reserva < $fecha_hoy) {
             throw new Exception("La reserva debe ser una fecha mayor a la actual");
         }
@@ -45,6 +46,7 @@ class ReservaController
 
     function Crear()
     {
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
         $cantidad_personas = (int)$_POST['cantidadPersonas'];
         $fecha_inicio = new DateTime($_POST['fecha']);
         $fecha_hoy = new DateTime(date("Y-m-d H:i:s"));
