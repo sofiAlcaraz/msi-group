@@ -7,7 +7,7 @@ class ReservaController
 
     private function fechaValida($fecha_inicio_reserva, $fecha_hoy)
     {
-        var_dump($fecha_inicio_reserva, $fecha_hoy);
+
         if ($fecha_inicio_reserva < $fecha_hoy) {
             throw new Exception("La reserva debe ser una fecha mayor a la actual");
         }
